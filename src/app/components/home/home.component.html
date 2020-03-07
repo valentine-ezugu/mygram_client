@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+</head>
+<body>
+
+<div class="row">
+  <div class="column left" style="background-color:#aaa;">
+    <mat-card  fxFlex class="news-left">
+      <mat-card-subtitle>
+        <h2>story news section</h2>
+      </mat-card-subtitle>
+
+      <mat-card-title>
+      </mat-card-title>
+
+      <mat-card-content>
+        <form>
+        </form>
+        <hr>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <div class="column middle" style="background-color:#bbb;">
+    <div class="upload_row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Choose File</h3>
+        <div *ngIf="currentFileUpload" class="progress">
+          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+               aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+            {{progress.percentage}}%</div>
+        </div>
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)">
+        </label>
+        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+      </div>
+    </div>
+
+    <ul>
+      <li>
+        <app-media-card
+          fxFlex
+          title="Valentine"
+          subTitle="Engineer"
+          imgUrl="https://s3.eu-central-1.amazonaws.com/viagramfiles/valentino/1569073175597-A2.jpg"
+          content='This is a dummy post.'
+          apiText="/api/whoami"
+          [responseObj]="whoamIResponse"
+          (apiClick)="makeRequest($event)"
+        >
+        </app-media-card>
+      </li>
+
+      <li>
+        <app-media-card
+          fxFlex
+          title="Valentine"
+          subTitle="Engineer"
+          imgUrl="assets/image/user.png"
+          content='This is a dummy post.'
+          apiText="/api/whoami"
+          [responseObj]="whoamIResponse"
+          (apiClick)="makeRequest($event)"
+        >
+        </app-media-card>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="column right" style="background-color:#ccc;">
+
+    <mat-card elevation="5" fxFlex class="news-right">
+      <mat-card-subtitle>
+        <h2>story news section</h2>
+      </mat-card-subtitle>
+
+      <mat-card-title>
+      </mat-card-title>
+
+      <mat-card-content>
+        <form>
+        </form>
+        <hr>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>
+
+</body>
+</html>

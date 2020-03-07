@@ -1,0 +1,126 @@
+app-media-card {
+  margin: 0 50px 0 0;
+  &.last {
+    margin: 0 0 0 0;
+  }
+}
+
+app-github {
+  margin: 50px -70px -50px;
+}
+
+//general settings
+* {
+  box-sizing: border-box;
+}
+
+// for previewing image
+img{
+  max-width:180px;
+}
+input[type=file]{
+  padding:10px;
+  background:#2d2d2d;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  /*height: 300px; !* Should be removed. Only for demonstration *!*/
+}
+
+.left {
+  width: 20%;
+}
+//left news section
+.news-left {
+  margin-top: 46px;
+}
+
+.right {
+  width: 25%;
+}
+// left news section
+.news-right {
+  margin-top: 46px;
+}
+
+.middle {
+  width: 55%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  app-media-card {
+    margin: 0 4px 0 0;
+    &.last {
+      margin: 0 0 0 0;
+    }
+  }
+
+  //TODO bellow is the division for home page
+  .column1 {
+    margin-top: 45px;
+
+    position: relative;
+    left: -10px;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+
+  .row.column2 {
+    text-align: left;
+    margin-top: 30px;
+
+    position: relative;
+    left: -10px;
+    margin-left: 20px;
+    margin-right: 30px;
+    background-color:#666;
+  }
+
+  .column3 {
+   width: -10px;
+    margin-top: 30px;
+    margin-left:  1px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  app-github {
+    margin: 20px -30px -20px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+
+  .content {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
+  }
+
+  app-media-card {
+    /* https://github.com/angular/flex-layout/issues/295 */
+    display: block !important;
+    margin: 0 0 12px 0;
+  }
+
+  app-github {
+    margin: 8px -12px -8px;
+  }
+
+}

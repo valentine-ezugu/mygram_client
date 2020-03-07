@@ -1,0 +1,46 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center"  style="margin-top:35px; margin-bottom:35px">
+
+  <mat-card elevation="5" fxFlex>
+    <mat-card-title>
+      <h2>Viagram</h2>
+    </mat-card-title>
+
+    <mat-card-content>
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <mat-form-field>
+          <label>Username: </label>
+          <input matInput formControlName="username" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>Password: </label>
+          <input matInput formControlName="password" required type="password">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>First Name: </label>
+          <input matInput formControlName="firstname">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>Last Name: </label>
+          <input matInput formControlName="lastname">
+        </mat-form-field>
+
+        <button type="submit" [disabled]="!signupForm.form.valid" mat-raised-button color="primary">Sign up</button>
+      </form>
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <p>By signing up, you agree to our Terms . Learn how we collect, use and share your data in our Data Policy and how we use cookies and similar technology in our Cookies Policy .</p>
+      <hr>
+      <p>
+        <i>Have an account?</i>
+      </p>
+      <button routerLink="/login" mat-raised-button color="accent">Log in</button>
+    </mat-card-content>
+
+  </mat-card>
+
+
+</div>

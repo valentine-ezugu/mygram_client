@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="content" fxLayout="row" fxLayoutAlign="center" style="margin-top:35px; margin-bottom:35px">
+
+  <mat-card elevation="5" fxFlex>
+    <mat-card-title>
+      <h2>Viagram</h2>
+    </mat-card-title>
+
+    <mat-card-content>
+
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+        <mat-form-field>
+          <input matInput formControlName="username" required placeholder="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="password" required type="password" placeholder="password">
+        </mat-form-field>
+        <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
+      </form>
+      <br>
+      <div *ngIf="!submitted">
+        <button matTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()"
+                mat-raised-button color="accent">Reset Credentials
+        </button>
+      </div>
+
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <br>
+      <hr>
+      <p><i>Don't have an account?</i></p>
+      <button routerLink="/signup" mat-raised-button color="accent">Sign up</button>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+</body>
+</html>
