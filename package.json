@@ -9,7 +9,7 @@
     "ci": "npm run test && npm run build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --aot -prod"
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
