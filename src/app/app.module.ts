@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -14,16 +13,15 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import {
-  MatButtonModule,
-  MatMenuModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatCardModule,
-  MatInputModule,
-  MatProgressSpinnerModule, MatIconRegistry
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import 'hammerjs';
 
 import { FooterComponent } from './components/footer/footer.component';
