@@ -8,7 +8,7 @@
     "ci": "npm run test && npm run build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/core": "^9.0.5",
     "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "^9.0.5",
+    "@angular/localize": "^9.0.5",
     "@angular/material": "^9.1.1",
     "@angular/platform-browser": "^9.0.5",
     "@angular/platform-browser-dynamic": "^9.0.5",
@@ -50,7 +51,7 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
-    "enhanced-resolve": "^4.1.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.1",
