@@ -8,7 +8,8 @@
     "ci": "npm run test && npm run build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot --prod",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
   },
   "private": true,
   "dependencies": {
