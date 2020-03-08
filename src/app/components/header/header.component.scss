@@ -32,7 +32,6 @@
 }
 
 
-/deep/ {
   .app-header-accountMenu.mat-menu-panel {
     border-radius: 3px;
     max-width: initial;
@@ -46,7 +45,8 @@
       margin-bottom: -6px;
     }
   }
-}
+
+
 @media screen and (max-width: 600px) {
   .greeting-hamburger {
     display: block;
